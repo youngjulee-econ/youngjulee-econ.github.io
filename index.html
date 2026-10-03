@@ -3,160 +3,327 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Youngju Lee</title>
-<meta name="description" content="Youngju Lee (이용주), Assistant Professor of Economics, University of Ulsan. Applied microeconomics: climate and energy, public, and labor economics.">
+<title>Youngju Lee · Economics, University of Ulsan</title>
+<meta name="description" content="Youngju Lee (이용주), Assistant Professor of Economics at the University of Ulsan. Applied microeconomics: climate and energy, public, and labor economics.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f4e8c'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EYL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff; --fg: #1f2328; --muted: #59636e; --line: #d8dee4; --link: #0b5cad; --accent: #f6f8fa;
+    --bg: #f7f8fa; --card: #ffffff; --fg: #1b222c; --muted: #5d6875; --line: #e2e6eb;
+    --accent: #1f4e8c; --accent-soft: #eaf0f9; --chip: #f0f2f5;
+    --ssci: #1f4e8c; --kci: #2f7d5b; --book: #8a5a12; --review: #6b4bb3;
+    --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 8px 24px rgba(16, 24, 40, .06);
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #0f1216; --fg: #e6e9ec; --muted: #9aa4ae; --line: #2b3138; --link: #7cb7ff; --accent: #161b22; }
+    :root {
+      --bg: #0d1117; --card: #141a22; --fg: #e6eaef; --muted: #9aa5b1; --line: #242c37;
+      --accent: #84b4ff; --accent-soft: #1a2638; --chip: #1c232d;
+      --ssci: #84b4ff; --kci: #6fd3a3; --book: #e8b866; --review: #b9a0ff;
+      --shadow: none;
+    }
   }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font: 16px/1.65 Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   }
-  main { max-width: 820px; margin: 0 auto; padding: 48px 16px 64px; }
-  header h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.1rem; margin: 0 0 4px; font-weight: 600; }
-  header h1 span { font-family: inherit; font-size: 1.15rem; color: var(--muted); font-weight: 400; margin-left: 6px; }
-  .role { margin: 0; color: var(--muted); }
-  .links { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 18px; }
-  .links a { font-weight: 600; }
-  nav { margin: 28px 0 8px; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-        display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.95rem; }
-  nav a { color: var(--fg); text-decoration: none; }
-  nav a:hover { color: var(--link); }
-  a { color: var(--link); text-decoration: none; }
+  a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: 600; margin: 40px 0 10px; scroll-margin-top: 16px; }
-  h3 { font-size: 1rem; margin: 22px 0 8px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-  p { margin: 0 0 12px; }
-  ol, ul { margin: 0; padding-left: 1.4em; }
-  li { margin: 0 0 10px; }
-  .me { font-weight: 600; }
-  .note { color: var(--muted); font-size: 0.92rem; }
-  .facts { display: grid; grid-template-columns: 120px 1fr; gap: 6px 16px; margin: 6px 0 0; }
-  .facts dt { color: var(--muted); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+  /* Hero */
+  .hero { padding: 56px 0 36px; display: flex; gap: 32px; align-items: center; }
+  .photo {
+    width: 168px; height: 168px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 22%;
+    border: 4px solid var(--card); box-shadow: var(--shadow); background: var(--card);
+  }
+  .hero h1 {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif; font-weight: 700;
+    font-size: 2.5rem; line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.01em;
+  }
+  .hero h1 .ko { font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 500; font-size: 1.15rem; color: var(--muted); margin-left: 10px; letter-spacing: 0; }
+  .role { margin: 0; font-size: 1.08rem; font-weight: 500; }
+  .aff { margin: 2px 0 0; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+    background: var(--card); border: 1px solid var(--line); color: var(--fg); font-weight: 500; font-size: 0.95rem;
+    box-shadow: var(--shadow);
+  }
+  .btn svg { width: 17px; height: 17px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .btn:hover { text-decoration: none; border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary svg { stroke: #fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #0d1117; } .btn.primary svg { stroke: #0d1117; } }
+
+  /* Nav */
+  nav.top {
+    position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(160%) blur(8px); -webkit-backdrop-filter: saturate(160%) blur(8px);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  nav.top .wrap { display: flex; gap: 4px 22px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; font-size: 0.95rem; font-weight: 500; }
+  nav.top a { color: var(--muted); }
+  nav.top a:hover { color: var(--accent); text-decoration: none; }
+
+  /* Sections */
+  section { padding: 36px 0 8px; scroll-margin-top: 56px; }
+  h2 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 1.6rem; margin: 0 0 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 28px 0 10px; font-weight: 600; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 24px; }
+  .bio { font-size: 1.04rem; margin: 0 0 18px; }
+  .facts { display: grid; grid-template-columns: 110px 1fr; gap: 8px 18px; margin: 0; }
+  .facts dt { color: var(--muted); font-weight: 500; }
   .facts dd { margin: 0; }
-  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
-  @media (max-width: 560px) {
-    main { padding-top: 32px; }
-    header h1 { font-size: 1.75rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .chips li { background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; }
+  .chips.accent li { background: var(--accent-soft); border-color: transparent; color: var(--accent); font-weight: 500; }
+
+  /* Publication entries */
+  .entries { list-style: none; margin: 0; padding: 0; }
+  .entry { display: grid; grid-template-columns: 64px 1fr; gap: 0 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .entry:last-child { border-bottom: 0; }
+  .yr { font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 1px; }
+  .ttl { font-weight: 600; color: var(--fg); }
+  a.ttl:hover { color: var(--accent); }
+  .au { color: var(--muted); font-size: 0.95rem; }
+  .au b { color: var(--fg); font-weight: 600; }
+  .src { font-size: 0.95rem; }
+  .src i { color: var(--fg); }
+  .badge { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 6px; margin-left: 6px; vertical-align: 1px; border: 1px solid currentColor; }
+  .b-ssci { color: var(--ssci); } .b-kci { color: var(--kci); } .b-book { color: var(--book); } .b-review { color: var(--review); }
+  .lang { color: var(--muted); font-size: 0.85rem; margin-left: 4px; }
+  .wp .entry { grid-template-columns: 1fr; }
+
+  footer { margin: 48px 0 0; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 640px) {
+    .hero { flex-direction: column; text-align: center; gap: 18px; padding-top: 36px; }
+    .hero h1 { font-size: 2rem; }
+    .hero h1 .ko { display: block; margin: 4px 0 0; }
+    .actions { justify-content: center; }
+    .photo { width: 140px; height: 140px; }
+    .card { padding: 18px; }
     .facts { grid-template-columns: 1fr; gap: 2px; }
-    .facts dd { margin-bottom: 8px; }
+    .facts dd { margin-bottom: 10px; }
+    .entry { grid-template-columns: 1fr; }
+    .yr { padding-top: 0; font-size: 0.9rem; }
   }
 </style>
 </head>
 <body>
-<main>
 
-<header>
-  <h1>Youngju Lee<span>이용주</span></h1>
-  <p class="role">Assistant Professor of Economics</p>
-  <p class="role">School of Business and Economics, University of Ulsan</p>
-  <ul class="links">
-    <li><a href="CV_YoungjuLee.pdf">CV (PDF)</a></li>
-    <li><a href="mailto:dydwn2023@ulsan.ac.kr">dydwn2023@ulsan.ac.kr</a></li>
-  </ul>
-</header>
+<div class="wrap">
+  <header class="hero">
+    <img class="photo" src="photo.jpg" alt="Portrait of Youngju Lee" width="168" height="168">
+    <div>
+      <h1>Youngju Lee<span class="ko">이용주</span></h1>
+      <p class="role">Assistant Professor of Economics</p>
+      <p class="aff">School of Business and Economics, University of Ulsan</p>
+      <div class="actions">
+        <a class="btn primary" href="CV_YoungjuLee.pdf">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+          CV
+        </a>
+        <a class="btn" href="mailto:dydwn2023@ulsan.ac.kr">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          dydwn2023@ulsan.ac.kr
+        </a>
+        <a class="btn" href="https://scholar.google.com/citations?user=AM4fNccAAAAJ&amp;hl=en">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
 
-<nav aria-label="Sections">
-  <a href="#about">About</a>
-  <a href="#publications">Publications</a>
-  <a href="#working-papers">Working Papers</a>
-  <a href="#teaching">Teaching</a>
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#working-papers">Working Papers</a>
+    <a href="#teaching">Teaching</a>
+  </div>
 </nav>
+
+<main class="wrap">
 
 <section id="about">
   <h2>About</h2>
-  <p>I am an applied microeconomist working on climate and energy, public, and labor economics. My research asks how people and firms actually respond when policies and institutions change, and whether those responses match what the policies intended. I study these questions with administrative data and quasi-experimental methods, and my recent work focuses on energy transition and climate policy in Korea.</p>
-  <dl class="facts">
-    <dt>Employment</dt>
-    <dd>University of Ulsan, Assistant Professor of Economics (2023–present)<br>Charles River Associates, Senior Associate, Oakland, CA (2022–2023)</dd>
-    <dt>Education</dt>
-    <dd>Ph.D. in Economics, University of California San Diego (2022)<br>M.A. in Economics, Sungkyunkwan University (2017)<br>B.A. in Global Economics, Sungkyunkwan University (2016)</dd>
-    <dt>Fields</dt>
-    <dd>Applied Microeconomics; Climate and Energy Economics; Environmental Policy Evaluation; Labor and Public Economics</dd>
-  </dl>
+  <div class="card">
+    <p class="bio">I am an applied microeconomist working on climate and energy, public, and labor economics. My research asks how people and firms actually respond when policies and institutions change, and whether those responses match what the policies intended. I study these questions with administrative data and quasi-experimental methods, and my recent work focuses on energy transition and climate policy in Korea.</p>
+    <dl class="facts">
+      <dt>Employment</dt>
+      <dd>University of Ulsan, Assistant Professor of Economics (2023–present)<br>Charles River Associates, Senior Associate, Oakland, CA (2022–2023)</dd>
+      <dt>Education</dt>
+      <dd>Ph.D. in Economics, University of California San Diego (2022)<br>M.A. in Economics, Sungkyunkwan University (2017)<br>B.A. in Global Economics, Sungkyunkwan University (2016)</dd>
+      <dt>Fields</dt>
+      <dd>
+        <ul class="chips accent">
+          <li>Applied Microeconomics</li><li>Climate and Energy Economics</li><li>Environmental Policy Evaluation</li><li>Labor and Public Economics</li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
 </section>
 
 <section id="publications">
   <h2>Publications</h2>
 
-  <h3>International Journals (SSCI)</h3>
-  <ol>
-    <li>Park, Minsung, <span class="me">Youngju Lee</span>, and Nobuhiko Nakazawa. 2026. “<a href="https://doi.org/10.1002/hec.70131">Unintended Consequences of Installing Platform Screen Doors: Displacement and Substitution for Suicide Attempts</a>.” <i>Health Economics</i>, 35(10), 1532–1547.</li>
-    <li><span class="me">Lee, Youngju</span>, and Nobuhiko Nakazawa. 2026. “<a href="https://doi.org/10.1007/s10797-025-09943-3">Political Alignment, Tax Evasion, and the Role of Government Credibility: Evidence from South Korea</a>.” <i>International Tax and Public Finance</i>, 33(4), 1449–1467.</li>
-    <li><span class="me">Lee, Youngju</span>, and Minsung Park. 2026. “<a href="https://doi.org/10.1016/j.eap.2025.12.031">The Effect of Cigarette Prices on Insurance Premiums: Evidence from Cigarette Tax Increase in South Korea</a>.” <i>Economic Analysis and Policy</i>, 89, 1064–1076.</li>
-    <li><span class="me">Lee, Youngju</span>, and Dooseok Jang. 2024. “<a href="https://doi.org/10.1080/1226508X.2024.2448330">Income Inequality Aversion and Private Charitable Contributions in Korea</a>.” <i>Global Economic Review</i>, 53(4), 345–360.</li>
-    <li><span class="me">Lee, Youngju</span>, and Nobuhiko Nakazawa. 2022. “<a href="https://doi.org/10.1016/j.jpubeco.2022.104729">Does Single-Sex Schooling Help or Hurt Labor Market Outcomes? Evidence from a Natural Experiment in South Korea</a>.” <i>Journal of Public Economics</i>, 214, 104729.</li>
-    <li>Lu, Jiajun, and <span class="me">Youngju Lee</span>. 2022. “<a href="https://doi.org/10.1080/08965803.2021.2008109">Spatial Effects of Air Pollution on the Housing Market: Evidence from South Korea</a>.” <i>Journal of Real Estate Research</i>, 44(1), 131–150.</li>
-  </ol>
+  <h3>International Journals</h3>
+  <ul class="entries">
+    <li class="entry"><div class="yr">2026</div><div>
+      <a class="ttl" href="https://doi.org/10.1002/hec.70131">Unintended Consequences of Installing Platform Screen Doors: Displacement and Substitution for Suicide Attempts</a>
+      <div class="au">Minsung Park, <b>Youngju Lee</b>, and Nobuhiko Nakazawa</div>
+      <div class="src"><i>Health Economics</i>, 35(10), 1532–1547<span class="badge b-ssci">SSCI</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2026</div><div>
+      <a class="ttl" href="https://doi.org/10.1007/s10797-025-09943-3">Political Alignment, Tax Evasion, and the Role of Government Credibility: Evidence from South Korea</a>
+      <div class="au"><b>Youngju Lee</b> and Nobuhiko Nakazawa</div>
+      <div class="src"><i>International Tax and Public Finance</i>, 33(4), 1449–1467<span class="badge b-ssci">SSCI</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2026</div><div>
+      <a class="ttl" href="https://doi.org/10.1016/j.eap.2025.12.031">The Effect of Cigarette Prices on Insurance Premiums: Evidence from Cigarette Tax Increase in South Korea</a>
+      <div class="au"><b>Youngju Lee</b> and Minsung Park</div>
+      <div class="src"><i>Economic Analysis and Policy</i>, 89, 1064–1076<span class="badge b-ssci">SSCI</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2024</div><div>
+      <a class="ttl" href="https://doi.org/10.1080/1226508X.2024.2448330">Income Inequality Aversion and Private Charitable Contributions in Korea</a>
+      <div class="au"><b>Youngju Lee</b> and Dooseok Jang</div>
+      <div class="src"><i>Global Economic Review</i>, 53(4), 345–360<span class="badge b-ssci">SSCI</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2022</div><div>
+      <a class="ttl" href="https://doi.org/10.1016/j.jpubeco.2022.104729">Does Single-Sex Schooling Help or Hurt Labor Market Outcomes? Evidence from a Natural Experiment in South Korea</a>
+      <div class="au"><b>Youngju Lee</b> and Nobuhiko Nakazawa</div>
+      <div class="src"><i>Journal of Public Economics</i>, 214, 104729<span class="badge b-ssci">SSCI</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2022</div><div>
+      <a class="ttl" href="https://doi.org/10.1080/08965803.2021.2008109">Spatial Effects of Air Pollution on the Housing Market: Evidence from South Korea</a>
+      <div class="au">Jiajun Lu and <b>Youngju Lee</b></div>
+      <div class="src"><i>Journal of Real Estate Research</i>, 44(1), 131–150<span class="badge b-ssci">SSCI</span></div>
+    </div></li>
+  </ul>
 
-  <h3>Korean Journals (KCI)</h3>
-  <ol>
-    <li><span class="me">Lee, Youngju</span>, and Minsung Park. 2026. “<a href="https://doi.org/10.38100/jhuf.2026.11.1.27">Determinants of Interest Rate Thresholds for Mortgage Borrowers’ Transition to Digital Financial Channels</a>.” <i>Journal of Housing and Urban Finance</i>, 11(1), 27–44. <span class="note">[in Korean]</span></li>
-    <li><span class="me">Lee, Youngju</span>. 2026. “<a href="https://doi.org/10.47116/apjcri.2026.02.11">An Empirical Analysis of Housing Discrimination Experiences and Determinants among Immigrants in Korea</a>.” <i>Asia-Pacific Journal of Convergent Research Interchange</i>, 12(2), 161–174. <span class="note">[in Korean]</span></li>
-    <li><span class="me">Lee, Youngju</span>, and Jeyong Jung. 2026. “<a href="https://doi.org/10.35147/knpsi.2026.40.2.271">Factors Associated with Career Attrition Intention and Wage Expectations among Cybersecurity Professionals-in-Training: Evidence from Cybersecurity Major Students</a>.” <i>The Journal of Police Policies</i>, 40(2), 271–302. <span class="note">[in Korean]</span></li>
-    <li><span class="me">Lee, Youngju</span>. 2025. “<a href="https://doi.org/10.23125/JTF.2025.14.3.2">Analysis of the Temporal Effects of Start-up Support Policies: Focusing on the Time to BEP among New Firms</a>.” <i>Journal of Technology Finance</i>, 14(3), 41–62. <span class="note">[in Korean]</span></li>
-    <li>Jang, Dooseok, and <span class="me">Youngju Lee</span>. 2025. “<a href="https://doi.org/10.37272/JIECR.2025.12.25.6.125">The Relationship Between Crime Perception and Online Shopping Behavior: A Study of Consumers in Seoul</a>.” <i>The Journal of Internet Electronic Commerce Research</i>, 25(6), 125–141. <span class="note">[in Korean]</span></li>
-    <li><span class="me">Lee, Youngju</span>, and Dooseok Jang. 2025. “<a href="https://doi.org/10.36345/kacst.2025.43.5.010">Cost Structure and Its Influence on Consumer Decisions for Eco-Friendly Products</a>.” <i>Journal of Product Research</i>, 43(5), 93–99. <span class="note">[in Korean]</span></li>
-    <li>Jang, Dooseok, and <span class="me">Youngju Lee</span>. 2025. “<a href="https://doi.org/10.37181/JSCS.2025.9.3.073">Impact Analysis of the Regularization Policy for Non-Regular Workers: A Dynamic Approach to Employee Welfare and Job Dissatisfaction</a>.” <i>The Journal of Social Convergence Studies</i>, 9(3), 73–87. <span class="note">[in Korean]</span></li>
-    <li>Jang, Dooseok, and <span class="me">Youngju Lee</span>. 2025. “<a href="https://doi.org/10.15531/KSCCR.2025.16.3.389">The Impact of Climate Crisis Perception on Transportation and Walkability Satisfaction in Seoul</a>.” <i>Journal of Climate Change Research</i>, 16(3-1), 389–399. <span class="note">[in Korean; Scopus]</span></li>
-    <li><span class="me">Lee, Youngju</span>, and Dooseok Jang. 2025. “<a href="https://doi.org/10.23286/gri.2025.27.1.010">A Study on the Impact of Perceptions of Social Inequality on Happiness, Group Participation, and Prosocial Behavior in South Korea</a>.” <i>GRI Review</i>, 27(1), 271–299. <span class="note">[in Korean]</span></li>
-  </ol>
+  <h3>Korean Journals</h3>
+  <ul class="entries">
+    <li class="entry"><div class="yr">2026</div><div>
+      <a class="ttl" href="https://doi.org/10.38100/jhuf.2026.11.1.27">Determinants of Interest Rate Thresholds for Mortgage Borrowers’ Transition to Digital Financial Channels</a>
+      <div class="au"><b>Youngju Lee</b> and Minsung Park</div>
+      <div class="src"><i>Journal of Housing and Urban Finance</i>, 11(1), 27–44<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2026</div><div>
+      <a class="ttl" href="https://doi.org/10.47116/apjcri.2026.02.11">An Empirical Analysis of Housing Discrimination Experiences and Determinants among Immigrants in Korea</a>
+      <div class="au"><b>Youngju Lee</b></div>
+      <div class="src"><i>Asia-Pacific Journal of Convergent Research Interchange</i>, 12(2), 161–174<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2026</div><div>
+      <a class="ttl" href="https://doi.org/10.35147/knpsi.2026.40.2.271">Factors Associated with Career Attrition Intention and Wage Expectations among Cybersecurity Professionals-in-Training: Evidence from Cybersecurity Major Students</a>
+      <div class="au"><b>Youngju Lee</b> and Jeyong Jung</div>
+      <div class="src"><i>The Journal of Police Policies</i>, 40(2), 271–302<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2025</div><div>
+      <a class="ttl" href="https://doi.org/10.23125/JTF.2025.14.3.2">Analysis of the Temporal Effects of Start-up Support Policies: Focusing on the Time to BEP among New Firms</a>
+      <div class="au"><b>Youngju Lee</b></div>
+      <div class="src"><i>Journal of Technology Finance</i>, 14(3), 41–62<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2025</div><div>
+      <a class="ttl" href="https://doi.org/10.37272/JIECR.2025.12.25.6.125">The Relationship Between Crime Perception and Online Shopping Behavior: A Study of Consumers in Seoul</a>
+      <div class="au">Dooseok Jang and <b>Youngju Lee</b></div>
+      <div class="src"><i>The Journal of Internet Electronic Commerce Research</i>, 25(6), 125–141<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2025</div><div>
+      <a class="ttl" href="https://doi.org/10.36345/kacst.2025.43.5.010">Cost Structure and Its Influence on Consumer Decisions for Eco-Friendly Products</a>
+      <div class="au"><b>Youngju Lee</b> and Dooseok Jang</div>
+      <div class="src"><i>Journal of Product Research</i>, 43(5), 93–99<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2025</div><div>
+      <a class="ttl" href="https://doi.org/10.37181/JSCS.2025.9.3.073">Impact Analysis of the Regularization Policy for Non-Regular Workers: A Dynamic Approach to Employee Welfare and Job Dissatisfaction</a>
+      <div class="au">Dooseok Jang and <b>Youngju Lee</b></div>
+      <div class="src"><i>The Journal of Social Convergence Studies</i>, 9(3), 73–87<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2025</div><div>
+      <a class="ttl" href="https://doi.org/10.15531/KSCCR.2025.16.3.389">The Impact of Climate Crisis Perception on Transportation and Walkability Satisfaction in Seoul</a>
+      <div class="au">Dooseok Jang and <b>Youngju Lee</b></div>
+      <div class="src"><i>Journal of Climate Change Research</i>, 16(3-1), 389–399<span class="badge b-kci">KCI</span><span class="badge b-kci">Scopus</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2025</div><div>
+      <a class="ttl" href="https://doi.org/10.23286/gri.2025.27.1.010">A Study on the Impact of Perceptions of Social Inequality on Happiness, Group Participation, and Prosocial Behavior in South Korea</a>
+      <div class="au"><b>Youngju Lee</b> and Dooseok Jang</div>
+      <div class="src"><i>GRI Review</i>, 27(1), 271–299<span class="badge b-kci">KCI</span><span class="lang">in Korean</span></div>
+    </div></li>
+  </ul>
 
   <h3>Books</h3>
-  <ol>
-    <li><span class="me">Lee, Youngju</span>. 2026. <i>The Effects of ESG Improvements on Firm Performance and Regional Economies: Evidence from Ulsan’s Industrial Structure.</i> Ulsan University Press. <span class="note">[in Korean]</span></li>
-    <li><span class="me">Lee, Youngju</span>. 2024. <i>Climate Crisis and Energy Industry.</i> Ulsan University Press. <span class="note">[in Korean]</span></li>
-  </ol>
+  <ul class="entries">
+    <li class="entry"><div class="yr">2026</div><div>
+      <span class="ttl">The Effects of ESG Improvements on Firm Performance and Regional Economies: Evidence from Ulsan’s Industrial Structure</span>
+      <div class="src">Ulsan University Press<span class="badge b-book">Book</span><span class="lang">in Korean</span></div>
+    </div></li>
+    <li class="entry"><div class="yr">2024</div><div>
+      <span class="ttl">Climate Crisis and Energy Industry</span>
+      <div class="src">Ulsan University Press<span class="badge b-book">Book</span><span class="lang">in Korean</span></div>
+    </div></li>
+  </ul>
 </section>
 
-<section id="working-papers">
+<section id="working-papers" class="wp">
   <h2>Working Papers</h2>
 
   <h3>Under Review</h3>
-  <ul>
-    <li>“When Solar Fails Together: Snow, Correlated Outages and Winter Resource Adequacy in South Korea” (with Eun-Seok Lee)</li>
-    <li>“Prenatal Heat Exposure and Birth Outcomes in South Korea: Nonlinear Damage and a Gestational-Age Channel” (with Jeyong Jung)</li>
-    <li>“When Do Export Controls Bind? Storability, Substitutability, and the Reversal of the Japan–Korea Dispute” (with Byungki Mun)</li>
-    <li>“Place-Based Collective Trauma and Long-Run Mental Health: Evidence from the May 18 Gwangju Democratization Movement” (with Jeyong Jung)</li>
-    <li>“Climate Shocks and Industrial Export Disruption: Evidence from Typhoon Hinnamnor and a Steel Production Halt” (with Byungki Mun)</li>
-    <li>“The Pandemic Safety Dividend: COVID-19, Food Delivery, and the Reallocation of Road Casualties in South Korea” (with Jeyong Jung)</li>
+  <ul class="entries">
+    <li class="entry"><div><span class="ttl">When Solar Fails Together: Snow, Correlated Outages and Winter Resource Adequacy in South Korea</span><span class="badge b-review">Under review</span><div class="au">with Eun-Seok Lee</div></div></li>
+    <li class="entry"><div><span class="ttl">Prenatal Heat Exposure and Birth Outcomes in South Korea: Nonlinear Damage and a Gestational-Age Channel</span><span class="badge b-review">Under review</span><div class="au">with Jeyong Jung</div></div></li>
+    <li class="entry"><div><span class="ttl">When Do Export Controls Bind? Storability, Substitutability, and the Reversal of the Japan–Korea Dispute</span><span class="badge b-review">Under review</span><div class="au">with Byungki Mun</div></div></li>
+    <li class="entry"><div><span class="ttl">Place-Based Collective Trauma and Long-Run Mental Health: Evidence from the May 18 Gwangju Democratization Movement</span><span class="badge b-review">Under review</span><div class="au">with Jeyong Jung</div></div></li>
+    <li class="entry"><div><span class="ttl">Climate Shocks and Industrial Export Disruption: Evidence from Typhoon Hinnamnor and a Steel Production Halt</span><span class="badge b-review">Under review</span><div class="au">with Byungki Mun</div></div></li>
+    <li class="entry"><div><span class="ttl">The Pandemic Safety Dividend: COVID-19, Food Delivery, and the Reallocation of Road Casualties in South Korea</span><span class="badge b-review">Under review</span><div class="au">with Jeyong Jung</div></div></li>
   </ul>
 
   <h3>Working Papers</h3>
-  <ul>
-    <li>“Rationing by the Calendar: Evidence from Budget-Limited Electric Vehicle Subsidies in South Korea” (with Hong Lee)</li>
-    <li>“Nameplate Is a Summer Number: Weather, Effective Capacity, and Congestion in EV Charging” (with Minsung Park and Nobuhiko Nakazawa)</li>
-    <li>“Taxes Travel Faster in Crowded Markets: Local Competition and the Pass-Through of Fuel Tax Increases in South Korea” (with Hong Lee)</li>
-    <li>“Size-Based Renewable Subsidies and Project Splitting: Evidence from 125,000 Korean Solar Installations” (with Eun-Seok Lee and Ilhyun Cho)</li>
-    <li>“Displaced but Not Replaced: Forest Siting Regulation, Project Size, and Solar Capacity in South Korea” (with Eun-Seok Lee and Ilhyun Cho)</li>
-    <li>“Fewer Bags, Same Waste: Evidence from Korea’s Volume-Based Pay-As-You-Throw” (with Nobuhiko Nakazawa)</li>
-    <li>“Shrink, Split, or Skip: Licensed-Contractor Mandates and Small-Building Construction in South Korea”</li>
+  <ul class="entries">
+    <li class="entry"><div><span class="ttl">Rationing by the Calendar: Evidence from Budget-Limited Electric Vehicle Subsidies in South Korea</span><div class="au">with Hong Lee</div></div></li>
+    <li class="entry"><div><span class="ttl">Nameplate Is a Summer Number: Weather, Effective Capacity, and Congestion in EV Charging</span><div class="au">with Minsung Park and Nobuhiko Nakazawa</div></div></li>
+    <li class="entry"><div><span class="ttl">Taxes Travel Faster in Crowded Markets: Local Competition and the Pass-Through of Fuel Tax Increases in South Korea</span><div class="au">with Hong Lee</div></div></li>
+    <li class="entry"><div><span class="ttl">Size-Based Renewable Subsidies and Project Splitting: Evidence from 125,000 Korean Solar Installations</span><div class="au">with Eun-Seok Lee and Ilhyun Cho</div></div></li>
+    <li class="entry"><div><span class="ttl">Displaced but Not Replaced: Forest Siting Regulation, Project Size, and Solar Capacity in South Korea</span><div class="au">with Eun-Seok Lee and Ilhyun Cho</div></div></li>
+    <li class="entry"><div><span class="ttl">Fewer Bags, Same Waste: Evidence from Korea’s Volume-Based Pay-As-You-Throw</span><div class="au">with Nobuhiko Nakazawa</div></div></li>
+    <li class="entry"><div><span class="ttl">Shrink, Split, or Skip: Licensed-Contractor Mandates and Small-Building Construction in South Korea</span></div></li>
   </ul>
 
   <h3>Work in Progress</h3>
-  <ul>
-    <li>“Flip and Flip Back: Two Government Turnovers and the Durability of Energy Transition Support in South Korea” (with Hong Lee)</li>
-    <li>“Which Reliability? Elicited Risk Preferences and Sixteen Years of Revealed Behavior” (with Nobuhiko Nakazawa and Minsung Park)</li>
-    <li>“Green Walls: Carbon-Footprint Rules, Contract Prices, and the Exclusion of Chinese Solar Modules in South Korea” (with Eun-Seok Lee)</li>
-    <li>“Compensated Fuel Price Caps under Energy Shocks: Incidence, Fiscal Exposure, and Exit Design” (with Hong Lee)</li>
+  <ul class="entries">
+    <li class="entry"><div><span class="ttl">Flip and Flip Back: Two Government Turnovers and the Durability of Energy Transition Support in South Korea</span><div class="au">with Hong Lee</div></div></li>
+    <li class="entry"><div><span class="ttl">Which Reliability? Elicited Risk Preferences and Sixteen Years of Revealed Behavior</span><div class="au">with Nobuhiko Nakazawa and Minsung Park</div></div></li>
+    <li class="entry"><div><span class="ttl">Green Walls: Carbon-Footprint Rules, Contract Prices, and the Exclusion of Chinese Solar Modules in South Korea</span><div class="au">with Eun-Seok Lee</div></div></li>
+    <li class="entry"><div><span class="ttl">Compensated Fuel Price Caps under Energy Shocks: Incidence, Fiscal Exposure, and Exit Design</span><div class="au">with Hong Lee</div></div></li>
   </ul>
 </section>
 
 <section id="teaching">
   <h2>Teaching</h2>
-  <p><b>University of Ulsan</b> (2023–present)</p>
-  <p><i>Undergraduate:</i> Climate Crisis and Energy Industry; Applied Econometrics; Labor Economics; Statistics for Business and Economics; Economic Data Analysis (Python); Data Economics; Applied Labor Data Analysis; Statistics: Concepts and Practice; Principles of Economics; Labor-Management Relations; Capstone Research Seminar</p>
-  <p><i>Graduate:</i> Microeconomics; Applied Economics; Economic Policy</p>
+  <div class="card">
+    <p style="margin:0 0 12px"><b>University of Ulsan</b> <span class="au">· 2023–present</span></p>
+    <h3 style="margin-top:4px">Undergraduate</h3>
+    <ul class="chips">
+      <li>Climate Crisis and Energy Industry</li><li>Applied Econometrics</li><li>Labor Economics</li><li>Statistics for Business and Economics</li><li>Economic Data Analysis (Python)</li><li>Data Economics</li><li>Applied Labor Data Analysis</li><li>Statistics: Concepts and Practice</li><li>Principles of Economics</li><li>Labor-Management Relations</li><li>Capstone Research Seminar</li>
+    </ul>
+    <h3>Graduate</h3>
+    <ul class="chips">
+      <li>Microeconomics</li><li>Applied Economics</li><li>Economic Policy</li>
+    </ul>
+  </div>
 </section>
 
 <footer>
-  Youngju Lee · School of Business and Economics, University of Ulsan, Ulsan, South Korea
+  Youngju Lee · School of Business and Economics, University of Ulsan, Ulsan, Republic of Korea · <a href="mailto:dydwn2023@ulsan.ac.kr">dydwn2023@ulsan.ac.kr</a>
 </footer>
 
 </main>
